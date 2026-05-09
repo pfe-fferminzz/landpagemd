@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- SEO -->
+    <title>Multydrink | Superalimento Antioxidante 100% Natural - Colombia</title>
+    <meta name="description" content="Bebida antioxidante 100% natural con Ganoderma Lucidum y Miel de Agave. Sube tus defensas, aumenta tu energía. Apto para diabéticos. Envío a toda Colombia.">
+    <meta name="robots" content="index, follow">
+    <!-- Seguridad: CSP (Content Security Policy) -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src https://fonts.gstatic.com;
+        img-src 'self' data: https://images.unsplash.com https://ui-avatars.com;
+        connect-src 'self';
+        frame-ancestors 'none';
+    ">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Multydrink | Superalimento Antioxidante 100% Natural">
+    <meta property="og:description" content="Sube tus defensas y transforma tu salud. 100% natural, apto para diabéticos. Envío a toda Colombia.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --verde-principal: #2E7D32;
+            --verde-claro: #4CAF50;
+            --verde-oscuro: #1B5E20;
+            --naranja-cta: #FF6D00;
+            --naranja-hover: #E65100;
+            --dorado: #FFC107;
+            --blanco: #ffffff;
+            --gris-claro: #f8f9fa;
+            --texto: #333333;
+        }
+
+        *, *::before, *::after {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--texto);
+            background-color: var(--blanco);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+        /* ===== NAVEGACIÓN ===== */
+        nav {
+            background: var(--blanco);
+            padding: 14px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: var(--verde-oscuro);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--verde-principal); }
+
+        .btn-nav {
+            background: var(--verde-principal);
+            color: var(--blanco) !important;
+            padding: 9px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Menú hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            border: none;
+            background: none;
+            z-index: 1100;
+            min-width: 44px;
+            min-height: 44px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--texto);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: var(--blanco);
+            padding: 20px 5%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            flex-direction: column;
+            gap: 16px;
+            z-index: 999;
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--texto);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        /* ===== BOTÓN CTA ===== */
+        .btn-cta {
+            display: inline-block;
+            background: var(--naranja-cta);
+            color: var(--blanco);
+            padding: clamp(14px, 3vw, 18px) clamp(28px, 6vw, 45px);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 109, 0, 0.4);
+            animation: pulse 2.5s infinite;
+            min-height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-cta:hover, .btn-cta:focus {
+            transform: translateY(-3px);
+            background: var(--naranja-hover);
+            box-shadow: 0 8px 25px rgba(255, 109, 0, 0.6);
+            outline: 2px solid var(--naranja-hover);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            margin-top: 60px;
+            padding: clamp(60px, 10vw, 100px) 5%;
+            min-height: 90vh;
+            background: linear-gradient(rgba(27, 94, 32, 0.87), rgba(46, 125, 50, 0.78)),
+                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+        }
+
+        .hero .badge {
+            background: var(--dorado);
+            color: var(--texto);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+            letter-spacing: 0.3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 7vw, 3.8rem);
+            line-height: 1.2;
+            margin-bottom: 18px;
+            font-weight: 800;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 36px;
+            max-width: 800px;
+            font-weight: 300;
+            padding: 0 4px;
+        }
+
+        .trust-icons {
+            display: flex;
+            gap: clamp(12px, 4vw, 30px);
+            margin-top: 36px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 2.2vw, 1rem);
+            background: rgba(255,255,255,0.12);
+            padding: 8px 14px;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ===== SECCIONES ===== */
+        .seccion { padding: clamp(50px, 8vw, 80px) 5%; background: var(--blanco); }
+        .bg-gris { background: var(--gris-claro); }
+
+        .seccion-titulo { text-align: center; margin-bottom: clamp(30px, 5vw, 50px); }
+        .seccion-titulo h2 {
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+            color: var(--verde-oscuro);
+            margin-bottom: 12px;
+        }
+        .seccion-titulo p { color: #666; font-size: clamp(0.95rem, 2.2vw, 1.1rem); }
+
+        /* ===== BENEFICIOS ===== */
+        .grid-beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+            gap: clamp(16px, 3vw, 30px);
+        }
+
+        .card {
+            background: var(--blanco);
+            padding: clamp(24px, 4vw, 40px) clamp(20px, 3vw, 30px);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, border-bottom-color 0.3s;
+            border-bottom: 5px solid var(--verde-claro);
+        }
+
+        .card:hover { transform: translateY(-8px); border-bottom-color: var(--naranja-cta); }
+
+        .card-icon { font-size: 2.8rem; margin-bottom: 6px; }
+
+        .card h3 {
+            color: var(--verde-oscuro);
+            margin: 14px 0 12px;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+        }
+
+        .card p { font-size: 0.95rem; color: #555; }
+
+        /* ===== CATÁLOGO ===== */
+        .grid-precios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+            gap: clamp(20px, 4vw, 30px);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .precio-card {
+            background: var(--blanco);
+            border: 2px solid #eee;
+            border-radius: 20px;
+            padding: clamp(28px, 5vw, 40px) clamp(20px, 4vw, 30px);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .precio-card.destacado {
+            border-color: var(--verde-principal);
+            box-shadow: 0 15px 40px rgba(46, 125, 50, 0.15);
+            order: -1; /* En móvil, muestra primero el destacado */
+        }
+
+        .etiqueta-ahorro {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--naranja-cta);
+            color: var(--blanco);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            white-space: nowrap;
+        }
+
+        .precio-card h3 {
+            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+            color: var(--verde-oscuro);
+            margin-bottom: 8px;
+        }
+
+        .precio-card .sobres {
+            color: #777;
+            margin-bottom: 18px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .precio-card .precio {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--texto);
+            margin-bottom: 5px;
+        }
+
+        .precio-card .precio-normal {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        .precio-card ul {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .precio-card ul li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .precio-card ul li::before {
+            content: '✓';
+            color: var(--verde-principal);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .btn-comprar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 16px;
+            background: var(--verde-principal);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            min-height: 52px;
+        }
+
+        .btn-comprar:hover, .btn-comprar:focus {
+            background: var(--verde-oscuro);
+            outline: 2px solid var(--verde-oscuro);
+        }
+
+        .btn-comprar.naranja { background: var(--naranja-cta); }
+        .btn-comprar.naranja:hover { background: var(--naranja-hover); outline-color: var(--naranja-hover); }
+
+        /* ===== TESTIMONIOS ===== */
+        .grid-testimonios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(16px, 3vw, 30px);
+        }
+
+        .testimonio {
+            background: var(--blanco);
+            padding: clamp(20px, 4vw, 30px);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            font-style: italic;
+        }
+
+        .estrellas { color: var(--dorado); font-size: 1.4rem; margin-bottom: 14px; }
+
+        .testimonio p { font-size: 0.95rem; color: #444; }
+
+        .cliente {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-style: normal;
+            gap: 14px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .cliente h4 { color: var(--verde-oscuro); font-size: 1rem; margin-bottom: 3px; }
+        .compra-verificada { color: var(--verde-principal); font-size: 0.8rem; font-weight: bold; }
+
+        /* ===== FAQ ===== */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            font-weight: 600;
+            color: var(--verde-oscuro);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            min-height: 60px;
+        }
+
+        .faq-trigger:hover { color: var(--verde-principal); }
+
+        .faq-trigger .faq-icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .faq-trigger[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.2s;
+            font-size: 0.97rem;
+            color: #555;
+            padding: 0;
+        }
+
+        .faq-body.open {
+            max-height: 300px;
+            padding-bottom: 20px;
+        }
+
+        /* ===== BANNER FINAL CTA ===== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));
+            padding: clamp(50px, 8vw, 80px) 5%;
+            text-align: center;
+            color: var(--blanco);
+        }
+
+        .cta-final h2 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin-bottom: 16px;
+        }
+
+        .cta-final p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            margin-bottom: 36px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #111;
+            color: var(--blanco);
+            padding: clamp(40px, 6vw, 60px) 5% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(24px, 4vw, 40px);
+            margin-bottom: 36px;
+        }
+
+        .footer-col h3 { color: var(--verde-claro); margin-bottom: 16px; font-size: 1.05rem; }
+
+        .footer-col p { color: #bbb; font-size: 0.92rem; line-height: 1.7; }
+
+        .footer-col a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+            font-size: 0.92rem;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-col a:hover { color: var(--blanco); }
+
+        .footer-bottom {
+            border-top: 1px solid #2a2a2a;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        /* ===== BOTÓN FLOTANTE WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            background: #25D366;
+            color: var(--blanco);
+            border-radius: 50px;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 52px;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+        }
+
+        .whatsapp-float svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            .precio-card.destacado { transform: scale(1); }
+
+            .hero { min-height: 80vh; padding-top: 80px; }
+
+            .trust-icons { gap: 10px; }
+
+            .trust-item { font-size: 0.82rem; padding: 6px 12px; }
+
+            .grid-precios { grid-template-columns: 1fr; }
+
+            .whatsapp-float .wsp-text { display: none; }
+
+            .whatsapp-float { padding: 15px; border-radius: 50%; width: 56px; height: 56px; justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 0.97rem; }
+            .card { padding: 22px 18px; }
+        }
+
+        /* ===== ACCESIBILIDAD ===== */
+        :focus-visible {
+            outline: 3px solid var(--naranja-cta);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVEGACIÓN ===== -->
+    <nav aria-label="Navegación principal">
+        <a href="#inicio" class="logo" aria-label="Multydrink - Inicio">MULTYDRINK</a>
+        <div class="nav-links" role="navigation">
+            <a href="#beneficios">Beneficios</a>
+            <a href="#ingredientes">Ingredientes</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">Preguntas</a>
+            <a href="#catalogo" class="btn-nav">Ver Catálogo</a>
+        </div>
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="mobile-menu" role="navigation" aria-label="Menú móvil">
+        <a href="#beneficios">✨ Beneficios</a>
+        <a href="#ingredientes">🌿 Ingredientes</a>
+        <a href="#testimonios">⭐ Testimonios</a>
+        <a href="#faq">❓ Preguntas Frecuentes</a>
+        <a href="#catalogo" style="color: var(--verde-principal);">🛒 Ver Catálogo</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header id="inicio" class="hero">
+        <span class="badge">🔥 EL SUPERALIMENTO MÁS BUSCADO EN COLOMBIA</span>
+        <h1>Nutrición, Energía y Defensas en un Solo Sachet</h1>
+        <p>Bebida natural y orgánica rica en antioxidantes. Elaborada con <strong>Ganoderma Lucidum</strong> y <strong>Miel de Agave</strong>. Sube tus defensas y transforma tu salud hoy.</p>
+        <a href="#catalogo" class="btn-cta" aria-label="Ver ofertas de Multydrink disponibles">¡Ver Ofertas Disponibles!</a>
+        <div class="trust-icons" aria-label="Características del producto">
+            <div class="trust-item">✅ 100% Natural</div>
+            <div class="trust-item">✅ Sin Azúcar Añadida</div>
+            <div class="trust-item">✅ Envío a todo el país</div>
+        </div>
+    </header>
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section id="beneficios" class="seccion bg-gris" aria-labelledby="titulo-beneficios">
+        <div class="seccion-titulo">
+            <h2 id="titulo-beneficios">¿Por qué elegir Multydrink?</h2>
+            <p>Formulado científicamente para proteger y optimizar tu cuerpo.</p>
+        </div>
+        <div class="grid-beneficios">
+            <article class="card">
+                <div class="card-icon" aria-hidden="true">🛡️</div>
+                <h3>Sube tus Defensas</h3>
+                <p>Combate los radicales libres y fortalece tu sistema inmunológico para prevenir enfermedades y mantenerte sano.</p>
+            </article>
+            <article class="card">
+                <div class="card-icon" aria-hidden="true">⚡</div>
+                <h3>Energía Sostenida</h3>
+                <p>Reduce el agotamiento físico brindando energía constante, ideal para el día a día o rutinas de entrenamiento.</p>
+            </article>
+            <article class="card">
+                <div class="card-icon" aria-hidden="true">🩺</div>
+                <h3>Apto para Diabéticos</h3>
+                <p>Fórmula libre de endulzantes artificiales y colorantes. Su bajo índice glucémico protege tu salud metabólica.</p>
+            </article>
+            <article class="card">
+                <div class="card-icon" aria-hidden="true">🏃</div>
+                <h3>Recuperación Rápida</h3>
+                <p>Ayuda a normalizar funciones digestivas y acelera la regeneración celular tras el esfuerzo físico o tratamientos médicos.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== CATÁLOGO ===== -->
+    <section id="catalogo" class="seccion" aria-labelledby="titulo-catalogo">
+        <div class="seccion-titulo">
+            <h2 id="titulo-catalogo">Catálogo y Promociones</h2>
+            <p>Selecciona el paquete ideal para ti y haz tu pedido seguro por WhatsApp.</p>
+        </div>
+        <div class="grid-precios">
+
+            <!-- DESTACADO: primero en móvil gracias a order: -1 -->
+            <div class="precio-card destacado">
+                <div class="etiqueta-ahorro">🌟 MEJOR OFERTA — ENVÍO GRATIS 🌟</div>
+                <h3>Plan Familiar / Intensivo</h3>
+                <p class="sobres">4 Cajas (84 Sobres)</p>
+                <div class="precio-normal">$449.700</div>
+                <div class="precio">$329.900</div>
+                <p style="color: #4CAF50; font-weight: bold; font-size: 1.05rem; margin-bottom: 4px;">¡Ahorras $119.800!</p>
+                <ul>
+                    <li>Tratamiento completo para 2 meses</li>
+                    <li>Envío Nacional <strong>GRATIS</strong></li>
+                    <li>Resultados profundos y sostenibles</li>
+                    <li>Mejor costo por sachet</li>
+                </ul>
+                <a href="https://wa.me/573147840766?text=Hola%2C%20quiero%20aprovechar%20la%20OFERTA%20de%204%20Cajas%20de%20Multydrink%20con%20env%C3%ADo%20gratis" target="_blank" rel="noopener noreferrer" class="btn-comprar naranja" aria-label="Comprar Plan Familiar 4 cajas por WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    ¡Comprar Oferta Ahora!
+                </a>
+            </div>
+
+            <div class="precio-card">
+                <h3>Caja Individual</h3>
+                <p class="sobres">1 Caja (21 Sobres)</p>
+                <div class="precio">$149.900</div>
+                <p style="color: #666; font-size: 0.88rem; margin-bottom: 4px;">+ Envío Nacional ($18.500)</p>
+                <ul>
+                    <li>Tratamiento básico</li>
+                    <li>Ideal para probar los beneficios</li>
+                    <li>Asesoría por WhatsApp</li>
+                </ul>
+                <a href="https://wa.me/573147840766?text=Hola%2C%20quiero%20comprar%201%20Caja%20de%20Multydrink%20por%20%24149.900" target="_blank" rel="noopener noreferrer" class="btn-comprar" aria-label="Pedir 1 caja de Multydrink por WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+            <div class="precio-card">
+                <div class="etiqueta-ahorro" style="background: var(--verde-principal);">Ahorro Incluido</div>
+                <h3>Dúo Pack</h3>
+                <p class="sobres">2 Cajas (42 Sobres)</p>
+                <div class="precio-normal">$299.800</div>
+                <div class="precio">$239.900</div>
+                <p style="color: #666; font-size: 0.88rem; margin-bottom: 4px;">+ Envío Nacional ($18.500)</p>
+                <ul>
+                    <li>Tratamiento extendido</li>
+                    <li>Excelente relación calidad-precio</li>
+                    <li>Ideal para parejas</li>
+                </ul>
+                <a href="https://wa.me/573147840766?text=Hola%2C%20quiero%20comprar%20el%20combo%20de%202%20Cajas%20de%20Multydrink%20por%20%24239.900" target="_blank" rel="noopener noreferrer" class="btn-comprar" aria-label="Pedir 2 cajas de Multydrink por WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section id="testimonios" class="seccion bg-gris" aria-labelledby="titulo-testimonios">
+        <div class="seccion-titulo">
+            <h2 id="titulo-testimonios">Lo que dicen nuestros clientes</h2>
+            <p>Más de 10,000 personas ya han transformado su salud.</p>
+        </div>
+        <div class="grid-testimonios">
+            <article class="testimonio">
+                <div class="estrellas" aria-label="5 estrellas">★★★★★</div>
+                <p>"Este es un producto que sirve demasiado para subir las defensas. Llevo semanas tomándolo y siento un cambio enorme en mi vitalidad diaria."</p>
+                <div class="cliente">
+                    <img class="avatar" src="https://ui-avatars.com/api/?name=Maria+G&background=4CAF50&color=fff" alt="Foto de perfil de María G." loading="lazy" width="48" height="48">
+                    <div>
+                        <h4>María G.</h4>
+                        <span class="compra-verificada">✓ Compra Verificada</span>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonio">
+                <div class="estrellas" aria-label="5 estrellas">★★★★★</div>
+                <p>"Muy buen producto de buen sabor. Atrévete a probarlo, comienza un cambio en tu vida, ¡en la mía ya lo hizo!"</p>
+                <div class="cliente">
+                    <img class="avatar" src="https://ui-avatars.com/api/?name=Carlos+M&background=4CAF50&color=fff" alt="Foto de perfil de Carlos M." loading="lazy" width="48" height="48">
+                    <div>
+                        <h4>Carlos M.</h4>
+                        <span class="compra-verificada">✓ Verificado en Mercado Libre</span>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonio">
+                <div class="estrellas" aria-label="5 estrellas">★★★★★</div>
+                <p>"Soy diabético y me costaba encontrar un antioxidante sin azúcares ocultos. Multydrink es perfecto, me da la energía constante que necesito sin picos de insulina."</p>
+                <div class="cliente">
+                    <img class="avatar" src="https://ui-avatars.com/api/?name=Jorge+P&background=4CAF50&color=fff" alt="Foto de perfil de Jorge P." loading="lazy" width="48" height="48">
+                    <div>
+                        <h4>Jorge P.</h4>
+                        <span class="compra-verificada">✓ Compra Verificada</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="seccion" aria-labelledby="titulo-faq">
+        <div class="seccion-titulo">
+            <h2 id="titulo-faq">Preguntas Frecuentes</h2>
+            <p>Resolvemos tus dudas antes de tu compra</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq1">
+                    ¿Las personas con diabetes pueden consumirlo?
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-body" id="faq1" role="region">
+                    ¡Sí! Al ser una bebida sin endulzantes artificiales ni colorantes, y estar formulada con Miel de Agave Azul (de bajo índice glucémico), es ideal para personas con diabetes.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq2">
+                    ¿Desde qué edad se puede tomar?
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-body" id="faq2" role="region">
+                    Multydrink es completamente seguro y apto para niños a partir de los 2 años de edad, siendo una excelente opción para toda la familia.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq3">
+                    ¿Cómo debo consumirlo?
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-body" id="faq3" role="region">
+                    Viene en formato sachet líquido ultra-práctico para consumo directo. <strong>Importante:</strong> No lo mezcles con productos lácteos (leche o yogurt), ya que esto inactiva los poderosos antioxidantes de la bebida.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false" aria-controls="faq4">
+                    ¿Cuánto tiempo tarda el envío?
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="faq-body" id="faq4" role="region">
+                    Realizamos envíos a toda Colombia. El tiempo de entrega es generalmente de 2 a 5 días hábiles dependiendo de tu ciudad. Una vez confirmes tu pedido por WhatsApp te informamos el tiempo exacto.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final" aria-label="Llamada a la acción final">
+        <h2>¿Listo para transformar tu salud?</h2>
+        <p>Únete a miles de colombianos que ya disfrutan los beneficios de Multydrink. Haz tu pedido hoy.</p>
+        <a href="#catalogo" class="btn-cta" style="animation: none; background: white; color: var(--verde-oscuro);">Ver Ofertas ↑</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>MULTYDRINK</h3>
+                <p>Tu dosis diaria de antioxidantes para una vida más longeva y llena de energía. 100% natural, hecho en Colombia.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#catalogo">Tienda / Pedidos</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#faq">Preguntas Frecuentes</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <a href="https://wa.me/573147840766" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al número +57 314 784 0766">📱 WhatsApp: +57 314 784 0766</a>
+                <p>🚚 Envíos a toda Colombia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Multydrink — Todos los derechos reservados.</p>
+            <p style="margin-top:6px;">Los resultados pueden variar. Este producto no pretende diagnosticar, tratar ni curar enfermedades.</p>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
+    <a href="https://wa.me/573147840766?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Multydrink"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="whatsapp-float"
+       aria-label="Abrir chat de WhatsApp con Multydrink">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="wsp-text">Pedir Ahora</span>
+    </a>
+
+    <script>
+        // ===== MENÚ HAMBURGUESA =====
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', function() {
+            const isOpen = mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('active', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+            hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        // Cierra el menú al hacer clic en cualquier enlace
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Abrir menú');
+            });
+        });
+
+        // Cierra menú si se hace clic fuera
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        const nav = document.querySelector('nav');
+
+        // ===== FAQ ACORDEÓN =====
+        document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                const bodyId = btn.getAttribute('aria-controls');
+                const body = document.getElementById(bodyId);
+
+                // Cierra todos
+                document.querySelectorAll('.faq-trigger').forEach(function(b) {
+                    b.setAttribute('aria-expanded', 'false');
+                    document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
+                });
+
+                // Abre el actual si estaba cerrado
+                if (!expanded) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    body.classList.add('open');
+                }
+            });
+        });
+
+        // ===== SCROLL SUAVE (fallback para Safari antiguo) =====
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
